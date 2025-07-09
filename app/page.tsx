@@ -1,9 +1,12 @@
 import Link from "next/link";
+import { Hero } from "./_components/hero";
 
 export default function HomePage() {
-  return <h1>
-    Página Inicial
-  </h1>
+  return (
+  <main>
+    <Hero/>
+  </main>
+  )
 
     ;
 
