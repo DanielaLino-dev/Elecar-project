@@ -1,15 +1,42 @@
 
 //Importe de componentes
 import StartButton from "./startbutton";
-import Header from "./header";
+import Header from "./Header";
+import Image from "next/image";
+import DataCarHome from './DataCarHome';
 
 
 //Importe de imagens e ícones
 import rainIcon from '../../../public/home/rain_icon.svg'
 import witheCarImage from '../../../public/home/home 1.png'
-import Image from "next/image";
+import iconTemperature from '../../../public/icon_temperature.svg'
+import iconThunder from '../../../public/icon_thunder.svg'
+import iconKM from '../../../public/icon_km.svg'
 
-export function Hero() {
+const carInfo = [
+    {
+        icon: iconTemperature,
+        title: "24°",
+        subtitle: "TEMPERATURE",
+        altImage: "Ícone de termômetro de temperatura"
+    },
+    {
+        icon: iconKM, // Se quiser adicionar mais depois
+        title: "873",
+        subtitle: "MILEAGE",
+        altImage: "Ícone de quilometragem"
+    },
+    {
+        icon: iconThunder,
+        title: "94%",
+        subtitle: "BATTERY",
+        altImage: "Ícone de bateria"
+    }
+];
+
+export default function Hero() {
+
+
     return (
         <section className="bg-[#0A0A0B] relative overflow-hidden">
             <Header />
@@ -37,18 +64,16 @@ export function Hero() {
                             alt="Carro de alto padrão na cor Branca"
                         />
                         <div className="grid grid-cols-3 w-fit text-center">
-                            <div>
-                                <p className="font-bold">24°</p>
-                                <p className="font-extralight">TEMPERATURE</p>
-                            </div>
-                            <div>
-                                <p className="font-bold">873</p>
-                                <p className="font-extralight">MILEAGE</p>
-                            </div>
-                            <div>
-                                <p className="font-bold">94%</p>
-                                <p className="font-extralight">BATTERY</p>
-                            </div>
+                            {carInfo.map((info, index) => (
+                                <DataCarHome
+                                    key={index}
+                                    icon={info.icon}
+                                    title={info.title}
+                                    subTitle={info.subtitle}
+                                    altImage={info.altImage}
+                                />
+                            ))
+                            }
                         </div>
                         <StartButton />
                     </div>
