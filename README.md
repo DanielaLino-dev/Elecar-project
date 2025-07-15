@@ -2,7 +2,7 @@
 
 Landing page moderna e responsiva para uma empresa de carros elétricos de luxo. Desenvolvida com **Next.js**, **TypeScript** e **Tailwind CSS**, este projeto visa oferecer uma experiência visual imersiva e performance otimizada.
 
-![Screenshot](./public/screenshot.png)
+![Screenshot](./public/preview_readme/hero.png)
 
 ---
 
